@@ -51,7 +51,7 @@ void solve_max(){ // solve for minimal score
   for(int i = 0; i < s.size(); ++i){
     mask |= (1 << (s[i] - '0'));
   }
-  double best_score = 0;
+  double best_score = -1;
   int best_choice = 0;
   for(int subset = mask; subset; subset = (subset - 1) & mask){
     int sum = 0;
@@ -79,6 +79,7 @@ void solve_max(){ // solve for minimal score
     }
     for(int i : t)cout << i;
     cout << " ";
+    //cout << best_score << endl;
     printf("%.5lf\n" , best_score);
   }
   else{
